@@ -1,0 +1,117 @@
+// general styles for the project that wouldn't be a reuseable component
+
+.bg {
+  &--white      { background-color: $white; }
+  &--white-5    { background-color: rgba($white,.5); }
+  &--grey { background-color: $grey; }
+  &--grey-dark { background-color: $grey-dark; }
+  &--grey-darker { background-color: $grey-darker; }
+  &--grey-darkest { background-color: $grey-darkest; }
+  &--grey-light { background-color: $grey-light; }
+  &--grey-lighter { background-color: $grey-lighter; }
+  &--grey-lightest { background-color: $grey-lightest; }
+
+  &--theme-primary { background-color: $theme-primary; }
+  &--theme-secondary { background-color: $theme-secondary; }
+
+  &--fixed {
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    background-attachment: fixed;
+    .touch & { background-attachment: scroll; }
+  }
+
+  &--image { @include background-attributes(); }
+
+  &--rounded { border-radius: 3px; }
+}
+
+
+
+
+.intro {
+  $page-nav-height: 50px;
+  position: relative;
+  &.has-nav {
+    padding-bottom: $page-nav-height;
+  }
+
+  &__content .col:first-child {
+    border-right: 1px solid $grey-lighter;
+  }
+
+  .layout--story &__content {
+    background-color: $white;
+    box-shadow: 0 0 30px rgba($grey-darkest, 0.2);
+  }
+}
+
+
+
+.overview-story {
+  &__expert {
+    max-width: 120px;
+    margin: auto;
+    margin-bottom: 2rem;
+  }
+}
+
+
+
+.story {
+
+  &__expert {
+    &-intro {
+      border-right: 1px solid $grey-lighter;
+      padding-right: 30px;
+      .flexbox & {
+        display: flex;
+        align-items: center;
+      }
+    }
+    &-image {
+      width: 200px;
+      float: left;
+      margin-right: 30px;
+    }
+  }
+
+  &__gallery {}
+  &__image {
+    &:nth-child(odd) { margin-right: 30px; }
+    &:nth-child(even) { margin-left: 30px; margin-top: -30px; }
+  }
+  &__text {}
+}
+
+
+
+.product {
+  @include transition();
+  &__lifestyle {
+    @include transition();
+    position: relative;
+    border: 5px solid $white;
+    box-shadow: 0 0 30px rgba($grey-darkest,0.15);
+  }
+  &__product {
+    @include transition();
+    width: 120px;
+    position: absolute;
+    bottom: -10px;
+    right: -15px;
+    box-shadow: 0 0 15px rgba($grey-darkest,0.15);
+  }
+  &__title {
+    @include transition();
+    padding-top: 2rem;
+  }
+
+  &:hover {
+    & .product__lifestyle { transform: scale(1.1) rotate(2.5deg); }
+    & .product__product { transform: rotate(-2.5deg); }
+    & .product__title { color: $theme-primary; }
+  }
+
+}

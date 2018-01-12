@@ -1,0 +1,110 @@
+---
+layout: standard
+---
+
+
+<div class="intro{% if page.sections %} has-nav{% endif %}">
+
+  <div class="intro__content section row row--padding row--8-4 row--valign">
+
+    <div class="col story__expert-intro">
+      <div class="story__expert-image bg-img bg-img--1-1 bg-img--circle" style="background-image: url({{site.baseurl}}/img/content/{{page.id}}/expert.jpg);"></div>
+      {{page.intro}}
+    </div>
+
+    <div class="col row--padding intro__nav">
+      <ul class="list--lined">
+        <li><a href="#section-story" class="title title--upper title--kerning title--bold">The story</a></li>
+        <li><a href="#section-look" class="title title--upper title--kerning title--bold">The look</a></li>
+      </ul>
+      <div class="vpad-top--sm">
+        <a href="#section-competition" class="btn btn--solid">Win this break</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+<div class="section story">
+  <div class="wp" id="section-story"></div>
+
+  {% for question in page.questions %}
+  <div class="row row--6-6 row--valign{% cycle "", " row--swap" %}">
+    <div class="col story__gallery row--padding">
+
+      {% for image in question.images %}
+      <div class="bg-img bg-img--{% if image.ratio %}{{image.ratio}}{% else %}16-9{% endif %} story__image" style="background-image: url({{site.baseurl}}/img/content/{{page.id}}/{{image.image}}.jpg);"></div>
+      {% endfor %}
+
+    </div>
+
+    <div class="col story__text row--padding">
+      {% if question.title %}
+        <h4 class="title title--xs title--display">{{question.title}}</h4>
+        <hr class="hr--left">
+      {% endif %}
+      {{question.paragraph}}
+    </div>
+  </div>
+  {% endfor %}
+
+</div>
+
+
+
+
+<div class="section vpad--xxxxl bg--fixed js-bg-fade" style="background-image: url({{site.baseurl}}/img/content/{{page.id}}/banner.jpg);">
+
+  <div class="row row--xxl row--padding text--white text--center">
+    <span class="title--xxl title--display title--bold title--upper title--kerning">{{page.banner-section.title}}</span>
+  </div>
+
+  <div class="js-bg-fade__overlay"></div>
+
+</div>
+
+
+
+
+<div class="section">
+  <div class="wp" id="section-look"></div>
+
+  <div class="row row--padding text--center">
+    <h2 class="title title--lg title--display">Get the @{{page.expert.instagram}} look</h2>
+    <p class="text--xl">Discover the PANDORA pieces that make our influencers’ outfits complete.</p>
+    <hr class="hr--center">
+  </div>
+
+  <div class="row row--padding row--3-3-3-3-gutters">
+    {% for pageproduct in page.products %}
+      {% assign product = site.data.products | where: "id", pageproduct.id %}
+      {% for product in product %}
+      <a href="{{product.link}}" class="col product text--center">
+
+        <div class="bg-img bg-img--3-4 product__lifestyle" style="background-image: url({{site.baseurl}}/img/content/{{page.id}}/products/{{product.id}}.jpg);">
+
+          <div class="bg-img bg-img--1-1 bg-img--circle product__product" style="background-image: url({{site.baseurl}}/img/products/{{product.id}}.jpg);"></div>
+
+        </div>
+
+
+        <h4 class="title title--upper title--kerning title--bold product__title">{{product.title}}</h4>
+      </a>
+      {% endfor %}
+    {% endfor %}
+  </div>
+
+  <div class="row row--padding text--center">
+    <a href="{{product.url}}" class="btn btn--lg btn--solid">Browse more Pandora products</a>
+  </div>
+</div>
+
+
+
+{% include page/competition-banner.html %}

@@ -1,0 +1,103 @@
+---
+layout: standard
+id: overview
+title: Overview
+nav-order: 1
+
+
+
+banner:
+  content: >
+    <h1 class="title title--display title--xxxl">Discover and win the perfect break with your loved ones</h1>
+    <div class="title title--sub title--xs title--bold title--upper title--kerning">with PANDORA &amp; Secret Escapes</div>
+
+
+
+intro: >
+  <p class="text--xl">Enter our exclusive competition to be in with a chance of winning your ideal getaway, whether you fancy a romantic sojourn with your partner or wish to kick-back with your beloved family. We asked four PANDORA ambassadors, each with their own unique style and holiday tastes, where they would like to escape with their loved ones.</p>
+  <p class="text--xl">Read their stories and make them a reality. Enter our competition to win one of the recommended breaks for a memorable holiday with your loved ones.</p>
+
+
+
+products:
+  - id: two-hearts-hoop-earrings
+  - id: silver-key-locket
+  - id: love-lock-ring
+  - id: moments-smooth-silver-bracelet
+  - id: two-hearts-open-silver-ring
+  - id: rose-smooth-moments-bracelet
+  - id: i-love-you-two-tone-pendant-charm
+  - id: rose-shining-elegance-clip
+
+
+---
+
+
+<div class="intro{% if page.sections %} has-nav{% endif %}">
+
+  <div class="intro__content section row row--padding text--center">
+    {{page.intro}}
+    <a href="#section-competition" class="btn btn--lg btn--solid">Enter the competition</a>
+  </div>
+
+</div>
+
+
+
+<div class="section white vpad--none vpad-bottom--xl">
+
+  <div class="row row--xxl row--padding row--6-6-gutters">
+    {% assign stories = site.html_pages | where: "layout", "story" | sort: "nav-order" %}
+    {% for story in stories %}
+      <div class="col text--center text--white">
+        <a href="{{site.baseurl}}{{story.url}}" class="bg-img bg-img--1-1 bg--grey-darkest">
+          <div class="bg-img__content">
+
+            <div class="overview-story__expert bg-img bg-img--1-1 bg-img--circle" style="background-image: url({{site.baseurl}}/img/content/{{story.id}}/expert.jpg);"></div>
+
+            <h2 class="title title--sm title--display title--upper title--kerning">{{story.title}}</h2>
+            <p class="text--bold">{{story.parent-intro}}</p>
+            <span class="btn btn--sm btn--solid">Read more</span>
+          </div>
+          <div class="bg-img__bg" style="background-image: url({{site.baseurl}}/img/bg/{{story.id}}.jpg);"></div>
+        </a>
+        <div class="space--md"></div>
+      </div>
+    {% endfor %}
+  </div>
+
+</div>
+
+
+
+<div class="section bg--grey-lightest">
+
+  <div class="row row--padding text--center">
+    <h2 class="title title--xl title--display">Express yourself</h2>
+  </div>
+
+  <div class="row row--padding row--3-3-3-3-gutters">
+    {% for pageproduct in page.products %}
+      {% assign product = site.data.products | where: "id", pageproduct.id %}
+      {% for product in product %}
+      <div class="col text--center row--padding">
+        <div class="bg-img bg-img--1-1 bg-img--circle" style="background-image: url({{site.baseurl}}/img/products/{{product.id}}.jpg);"></div>
+        <div class="space--xs"></div>
+        <h4 class="title title--xxxs title--bold">{{product.title}}</h4>
+        <div class="space--md"></div>
+      </div>
+      {% endfor %}
+    {% endfor %}
+  </div>
+
+  <div class="row row--padding text--center">
+    <a href="{{product.url}}" class="btn btn--lg btn--solid">Browse more PANDORA products</a>
+  </div>
+
+
+
+</div>
+
+
+
+{% include page/competition-banner.html %}
