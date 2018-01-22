@@ -59,21 +59,46 @@
 
 
 
+.overview-product {
+  margin-bottom: $s2;
+
+  @include layout(12 1);
+  @include gallery(6);
+  @include bp(xl){
+    @include gallery(3);
+  }
+
+}
+
+
+
 .story {
 
   &__expert {
     &-intro {
-      border-right: 1px solid $grey-lighter;
-      padding-right: 30px;
-      .flexbox & {
-        display: flex;
-        align-items: center;
+      @include bp(lg){
+        border-right: 1px solid $grey-lighter;
+        padding-right: 30px;
+        .flexbox & {
+          display: flex;
+          align-items: center;
+        }
       }
     }
     &-image {
-      width: 200px;
-      float: left;
-      margin-right: 30px;
+      display: none;
+      @include bp(lg){
+        display: block;
+        width: 200px;
+        float: left;
+        margin-right: 30px;
+      }
+    }
+  }
+
+  &__nav {
+    @include bp(lg){
+      padding-left: $s4;
     }
   }
 
@@ -89,6 +114,8 @@
 
 .product {
   @include transition();
+  display: block;
+  & + & { margin-bottom: $s2; }
   &__lifestyle {
     @include transition();
     position: relative;
@@ -114,4 +141,16 @@
     & .product__title { color: $theme-primary; }
   }
 
+}
+
+
+
+.competition {
+  &__title-logo {
+    vertical-align: top;
+
+    width: 215px;
+    margin-top: -5px;
+    @include bp(lg){ width: 310px; margin-top: -8px; }
+  }
 }

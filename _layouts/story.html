@@ -12,7 +12,7 @@ layout: standard
       {{page.intro}}
     </div>
 
-    <div class="col row--padding intro__nav">
+    <div class="col story__nav">
       <ul class="list--lined">
         <li><a href="#section-story" class="title title--upper title--kerning title--bold">The story</a></li>
         <li><a href="#section-look" class="title title--upper title--kerning title--bold">The look</a></li>
@@ -87,14 +87,14 @@ layout: standard
       {% for product in product %}
       <a href="{{product.link}}" class="col product text--center">
 
-        <div class="bg-img bg-img--3-4 product__lifestyle" style="background-image: url({{site.baseurl}}/img/content/{{page.id}}/products/{{product.id}}.jpg);">
+        <div class="bg-img bg-img--4-3 bg-img--lg-3-4 product__lifestyle" style="background-image: url({{site.baseurl}}/img/content/{{page.id}}/products/{{product.id}}.jpg);">
 
           <div class="bg-img bg-img--1-1 bg-img--circle product__product" style="background-image: url({{site.baseurl}}/img/products/{{product.id}}.jpg);"></div>
 
         </div>
 
 
-        <h4 class="title title--upper title--kerning title--bold product__title">{{product.title}}</h4>
+        <h4 class="title title--bold product__title">{{product.title}}</h4>
       </a>
       {% endfor %}
     {% endfor %}

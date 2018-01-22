@@ -35,7 +35,7 @@
   &--upper      { text-transform: uppercase; }
   &--italic     { font-style: italic; }
 
-  &--display-size { font-size: $s8; }
+  &--display-size { font-size: $s7; }
   &--xxxxxl       { font-size: $s7; }
   &--xxxxl        { font-size: $s7; }
   &--xxxl         { font-size: $s7; }
@@ -49,7 +49,9 @@
   &--xxxs         { font-size: $s-1; }
   &--xxxxs         { font-size: $s-1; }
 
+  &--overview { font-size: $s5; }
   @include bp(md){
+    &--overview     { font-size: $s7; }
     &--display-size { font-size: $s10; }
     &--xxxxxl       { font-size: $s11; }
     &--xxxxl        { font-size: $s10; }
@@ -63,6 +65,9 @@
     &--xxs          { font-size: $s2; }
     &--xxxs         { font-size: $s1; }
     &--xxxxs         { font-size: $s-1; }
+  }
+  @include bp(xl){
+    &--overview     { font-size: $s9; }
   }
 
 

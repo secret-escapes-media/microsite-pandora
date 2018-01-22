@@ -8,7 +8,7 @@ nav-order: 1
 
 banner:
   content: >
-    <h1 class="title title--display title--xxxl">Discover and win the perfect break with your loved ones</h1>
+    <h1 class="title title--display title--overview">Discover and win the perfect break with your loved ones</h1>
     <div class="title title--sub title--xs title--bold title--upper title--kerning">with PANDORA &amp; Secret Escapes</div>
 
 
@@ -25,7 +25,7 @@ products:
   - id: love-lock-ring
   - id: moments-smooth-silver-bracelet
   - id: two-hearts-open-silver-ring
-  - id: rose-smooth-moments-bracelet
+  - id: rose-essence-bracelet
   - id: i-love-you-two-tone-pendant-charm
   - id: rose-shining-elegance-clip
 
@@ -50,7 +50,7 @@ products:
     {% assign stories = site.html_pages | where: "layout", "story" | sort: "nav-order" %}
     {% for story in stories %}
       <div class="col text--center text--white">
-        <a href="{{site.baseurl}}{{story.url}}" class="bg-img bg-img--1-1 bg--grey-darkest">
+        <a href="{{site.baseurl}}{{story.url}}" class="bg-img bg-img--3-4 bg-img--lg-1-1  bg--grey-darkest">
           <div class="bg-img__content">
 
             <div class="overview-story__expert bg-img bg-img--1-1 bg-img--circle" style="background-image: url({{site.baseurl}}/img/content/{{story.id}}/expert.jpg);"></div>
@@ -76,11 +76,11 @@ products:
     <h2 class="title title--xl title--display">Express yourself</h2>
   </div>
 
-  <div class="row row--padding row--3-3-3-3-gutters">
+  <div class="row row--padding">
     {% for pageproduct in page.products %}
       {% assign product = site.data.products | where: "id", pageproduct.id %}
       {% for product in product %}
-      <div class="col text--center row--padding">
+      <div class="overview-product text--center row--padding">
         <div class="bg-img bg-img--1-1 bg-img--circle" style="background-image: url({{site.baseurl}}/img/products/{{product.id}}.jpg);"></div>
         <div class="space--xs"></div>
         <h4 class="title title--xxxs title--bold">{{product.title}}</h4>
