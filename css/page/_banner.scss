@@ -9,6 +9,7 @@ $core-nav-height-sm:  $s8;
   text-align: center;
   color: white;
   height: 80%;
+  min-height: 400px;
   .overview & { height: 80%; }
   &__wrap {
     display: table;
@@ -16,6 +17,8 @@ $core-nav-height-sm:  $s8;
     height: 100%;
   }
   &__content {
+    padding-top: 4em;
+    padding-bottom: 4em;
     display: table-cell;
     vertical-align: middle;
     text-shadow: 0 0 35px rgba($grey-darkest,0.6);

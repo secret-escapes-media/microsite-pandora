@@ -39,7 +39,7 @@ layout: standard
     <div class="col story__gallery row--padding">
 
       {% for image in question.images %}
-      <div class="bg-img bg-img--{% if image.ratio %}{{image.ratio}}{% else %}16-9{% endif %} story__image" style="background-image: url({{site.baseurl}}/img/content/{{page.id}}/{{image.image}}.jpg);"></div>
+      <div class="bg-img bg-img--16-9 bg-img--lg-3-4 bg-img--xxl-{% if image.ratio %}{{image.ratio}}{% else %}16-9{% endif %} story__image" style="background-image: url({{site.baseurl}}/img/content/{{page.id}}/{{image.image}}.jpg);"></div>
       {% endfor %}
 
     </div>

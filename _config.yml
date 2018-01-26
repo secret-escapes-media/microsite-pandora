@@ -3,7 +3,7 @@ title: PANDORA
 client:
   name: PANDORA
   link:
-description:
+description: Enter our exclusive competition to be in with a chance of winning your ideal getaway, whether you fancy a romantic sojourn with your partner or wish to kick-back with your beloved family.
 
 baseurl: "/pandora" # the subpath of your site, e.g. /blog/
 url: "http://mp.secretescapes.com" # the base hostname & protocol for your site

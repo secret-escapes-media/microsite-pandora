@@ -37,10 +37,6 @@
     padding-bottom: $page-nav-height;
   }
 
-  &__content .col:first-child {
-    border-right: 1px solid $grey-lighter;
-  }
-
   .layout--story &__content {
     background-color: $white;
     box-shadow: 0 0 30px rgba($grey-darkest, 0.2);
@@ -151,6 +147,18 @@
 
     width: 215px;
     margin-top: -5px;
-    @include bp(lg){ width: 310px; margin-top: -8px; }
+    @include bp(md){ width: 310px; margin-top: -8px; }
+  }
+}
+
+
+
+#competition-form {
+  height: 1200px;
+  @include bp(sm){
+    height: 940px !important;
+  }
+  @include bp(lg){
+    height: 840px !important;
   }
 }
