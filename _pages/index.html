@@ -4,6 +4,9 @@ id: overview
 title: Overview
 nav-order: 1
 
+tracking-segment: "overview::SecretEscapes"
+tracking-link: "http://estore-uk.pandora.net/valentine-s/?cid=em:ge:e:en-gb::::VAL18:ot:overview::SecretEscapes"
+
 
 
 banner:
@@ -80,18 +83,18 @@ products:
     {% for pageproduct in page.products %}
       {% assign product = site.data.products | where: "id", pageproduct.id %}
       {% for product in product %}
-      <div class="overview-product text--center row--padding">
+      <a id="tracking-overview-{{product.id}}" href="{{product.link}}{{page.tracking-segment}}" class="overview-product text--center row--padding">
         <div class="bg-img bg-img--1-1 bg-img--circle" style="background-image: url({{site.baseurl}}/img/products/{{product.id}}.jpg);"></div>
         <div class="space--xs"></div>
         <h4 class="title title--xxxs title--bold">{{product.title}}</h4>
         <div class="space--md"></div>
-      </div>
+      </a>
       {% endfor %}
     {% endfor %}
   </div>
 
   <div class="row row--padding text--center">
-    <a href="{{product.url}}" class="btn btn--lg btn--solid">Browse more PANDORA products</a>
+    <a id="tracking-overview-more-btn" href="{% if page.tracking-link %}{{page.tracking-link}}{% else %}{{site.client.link}}{% endif %}" class="btn btn--lg btn--solid">Browse more Pandora products</a>
   </div>
 
 

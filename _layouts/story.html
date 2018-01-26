@@ -85,7 +85,7 @@ layout: standard
     {% for pageproduct in page.products %}
       {% assign product = site.data.products | where: "id", pageproduct.id %}
       {% for product in product %}
-      <a href="{{product.link}}" class="col product text--center">
+      <a id="tracking-{{page.id}}-{{product.id}}" href="{{product.link}}{{page.tracking-segment}}" class="col product text--center">
 
         <div class="bg-img bg-img--4-3 bg-img--lg-3-4 product__lifestyle" style="background-image: url({{site.baseurl}}/img/content/{{page.id}}/products/{{product.id}}.jpg);">
 
@@ -101,7 +101,7 @@ layout: standard
   </div>
 
   <div class="row row--padding text--center">
-    <a href="{{product.url}}" class="btn btn--lg btn--solid">Browse more Pandora products</a>
+    <a id="tracking-{{page.id}}-more-btn" href="{% if page.tracking-link %}{{page.tracking-link}}{% else %}{{site.client.link}}{% endif %}" class="btn btn--lg btn--solid">Browse more Pandora products</a>
   </div>
 </div>
 

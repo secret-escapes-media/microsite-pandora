@@ -2,7 +2,7 @@
 title: PANDORA
 client:
   name: PANDORA
-  link:
+  link: "http://estore-uk.pandora.net/valentine-s/?cid=em:ge:e:en-gb::::VAL18:ot:"
 description: Enter our exclusive competition to be in with a chance of winning your ideal getaway, whether you fancy a romantic sojourn with your partner or wish to kick-back with your beloved family.
 
 baseurl: "/pandora" # the subpath of your site, e.g. /blog/
