@@ -154,11 +154,11 @@
 
 
 #competition-form {
-  height: 1200px;
+  height: 1280px;
   @include bp(sm){
-    height: 940px !important;
+    height: 1060px !important;
   }
   @include bp(lg){
-    height: 840px !important;
+    height: 1000px !important;
   }
 }
